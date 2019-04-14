@@ -10,7 +10,7 @@ RSpec.describe Rack::Auth::Request do
   end
 
   def request(auth)
-    protected_app = Rack::Auth::Request.new(unprotected_app, auth)
+    protected_app = Rack::Auth::Request.new(unprotected_app, &auth)
     Rack::MockRequest.new(protected_app)
   end
 

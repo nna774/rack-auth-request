@@ -3,7 +3,7 @@ require "rack/auth/request/version"
 module Rack
   module Auth
     class Request
-      def initialize(app, auth)
+      def initialize(app, &auth)
         @app, @auth = app, auth
       end
 
